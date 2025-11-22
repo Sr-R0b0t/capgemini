@@ -1,6 +1,6 @@
 {
   "name": "mdfe-app",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Aplicativo MDF-e",
   "main": "main.js",
   "author": "Cristovam",
@@ -30,6 +30,7 @@
     "electron-builder": "^24.13.3"
   },
   "dependencies": {
+    "electron-log": "^5.4.3",
     "electron-updater": "^6.6.2"
   }
 }
