@@ -1,6 +1,6 @@
 {
   "name": "mdfe-app",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "description": "Aplicativo MDF-e",
   "main": "main.js",
   "author": "Cristovam",
@@ -11,7 +11,7 @@
   },
   "build": {
     "appId": "com.cristovam.mdfeapp",
-    "productName": "MDF-e App",
+    "productName": "MDFe-App",
     "publish": [
       {
         "provider": "github",
