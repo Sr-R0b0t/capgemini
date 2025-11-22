@@ -1,11 +1,17 @@
+<<<<<<< HEAD
 const { app, BrowserWindow, dialog } = require('electron');
 const { autoUpdater } = require('electron-updater');
 const path = require('path');
+=======
+const { app, BrowserWindow } = require('electron');
+const { autoUpdater } = require('electron-updater');
+>>>>>>> e0256e6ceac45dfdb00768de7a452fd455780d68
 
 function createWindow() {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
+<<<<<<< HEAD
     webPreferences: {
       nodeIntegration: true
     }
@@ -51,3 +57,14 @@ app.on('ready', () => {
     });
   });
 });
+=======
+    webPreferences: { nodeIntegration: true }
+  });
+  win.loadFile('index.html');
+}
+
+app.whenReady().then(() => {
+  createWindow();
+  autoUpdater.checkForUpdatesAndNotify();
+});
+>>>>>>> e0256e6ceac45dfdb00768de7a452fd455780d68
