@@ -1,6 +1,6 @@
 {
   "name": "mdfe-app",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Aplicativo MDF-e",
   "main": "main.js",
   "author": "Cristovam",

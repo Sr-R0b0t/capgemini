@@ -1,17 +1,11 @@
-<<<<<<< HEAD
 const { app, BrowserWindow, dialog } = require('electron');
 const { autoUpdater } = require('electron-updater');
 const path = require('path');
-=======
-const { app, BrowserWindow } = require('electron');
-const { autoUpdater } = require('electron-updater');
->>>>>>> e0256e6ceac45dfdb00768de7a452fd455780d68
 
 function createWindow() {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
-<<<<<<< HEAD
     webPreferences: {
       nodeIntegration: true
     }
@@ -23,14 +17,14 @@ function createWindow() {
 app.on('ready', () => {
   createWindow();
 
-  // Canal para logs
+  // CONFIGURAR LOG
   autoUpdater.logger = require("electron-log");
   autoUpdater.logger.transports.file.level = "info";
 
-  // Verifica atualização
+  // VERIFICAR ATUALIZAÇÃO
   autoUpdater.checkForUpdates();
 
-  // Nova atualização encontrada
+  // ATUALIZAÇÃO DISPONÍVEL
   autoUpdater.on("update-available", () => {
     dialog.showMessageBox({
       type: "info",
@@ -40,12 +34,12 @@ app.on('ready', () => {
     });
   });
 
-  // Nada novo
+  // NENHUMA ATUALIZAÇÃO
   autoUpdater.on("update-not-available", () => {
     console.log("Nenhuma atualização disponível.");
   });
 
-  // Download concluído
+  // DOWNLOAD CONCLUÍDO
   autoUpdater.on("update-downloaded", () => {
     dialog.showMessageBox({
       type: "question",
@@ -53,18 +47,9 @@ app.on('ready', () => {
       defaultId: 0,
       message: "A atualização foi baixada. Deseja instalar agora?"
     }).then(result => {
-      if (result.response === 0) autoUpdater.quitAndInstall();
+      if (result.response === 0) {
+        autoUpdater.quitAndInstall();
+      }
     });
   });
 });
-=======
-    webPreferences: { nodeIntegration: true }
-  });
-  win.loadFile('index.html');
-}
-
-app.whenReady().then(() => {
-  createWindow();
-  autoUpdater.checkForUpdatesAndNotify();
-});
->>>>>>> e0256e6ceac45dfdb00768de7a452fd455780d68
